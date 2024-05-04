@@ -1,16 +1,19 @@
 import './crypto-polyfill.js';
+import '@ethersproject/shims';
 import '@walletconnect/react-native-compat';
 
 import { StatusBar } from 'expo-status-bar';
 
 import { WagmiConfig } from 'wagmi';
 import { mainnet, polygon, arbitrum, fantomTestnet } from 'viem/chains';
+import { ethers } from 'ethers';
 import {
   createWeb3Modal,
   defaultWagmiConfig,
   W3mButton,
   Web3Modal,
 } from '@web3modal/wagmi-react-native';
+import { useAccount } from 'wagmi';
 
 import {
   Button,
@@ -19,6 +22,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Test from './Test';
 // import { useChainId } from 'wagmi';
 
 // // 1. Get projectId at https://cloud.walletconnect.com
@@ -83,6 +87,7 @@ export default function App() {
       <WagmiConfig config={wagmiConfig}>
         <Web3Modal />
         <Text>hello</Text>
+        <Test />
         <W3mButton />
       </WagmiConfig>
       <Text>Open up App.tsx to start working on your app!</Text>
