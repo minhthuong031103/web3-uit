@@ -8,6 +8,7 @@ type Props = {
     type?: "default" | "outline";
     onPress: () => void;
     styleContainer?: string;
+    styleText?: string;
 };
 
 export const Button = ({
@@ -15,21 +16,30 @@ export const Button = ({
     icon,
     type = "default",
     styleContainer,
+    styleText,
     onPress,
 }: Props) => {
     return (
         <TouchableOpacity
             className={cn(
-                "py-3 px-6 flex-row items-center justify-center self-start bg-secondary rounded-md",
+                "py-3 px-6 flex-row items-center justify-between self-start bg-secondary rounded-md",
                 type === "outline" && "bg-transparent border-2 border-gray-100",
+                icon && "px-4",
                 styleContainer
             )}
             onPress={onPress}
             activeOpacity={0.9}
         >
-            <Text className="font-psemibold text-white text-sm capitalize">
+            <Text
+                className={cn(
+                    "font-psemibold text-white text-sm capitalize",
+                    icon && "mr-1",
+                    styleText
+                )}
+            >
                 {title}
             </Text>
+            {icon}
         </TouchableOpacity>
     );
 };

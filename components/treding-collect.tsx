@@ -1,10 +1,10 @@
 import { FontAwesome5 } from "@expo/vector-icons";
 import React from "react";
 import { Text, View } from "react-native";
-import { cn } from "../../lib/utils";
-import { Avatar } from "../avatar";
+import { cn } from "../lib/utils";
+import { Avatar } from "./avatar";
 
-const Collection = () => {
+export const TrendingCollect = () => {
     return (
         <View className="mt-4 flex-row items-center justify-between">
             <View className="flex-row items-center">
@@ -37,5 +37,3 @@ const Collection = () => {
         </View>
     );
 };
-
-export default Collection;

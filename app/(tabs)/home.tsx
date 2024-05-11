@@ -6,7 +6,7 @@ import { Avatar } from "../../components/avatar";
 import { Balance } from "../../components/balance";
 import { Button } from "../../components/button";
 import { Card } from "../../components/card";
-import Collection from "../../components/home/collection";
+import { TrendingCollect } from "../../components/treding-collect";
 
 const Home = () => {
     const [title, setTitle] = useState<string>("Trending");
@@ -58,7 +58,7 @@ const Home = () => {
                 <FlatList
                     nestedScrollEnabled
                     data={trending}
-                    renderItem={({ item }) => <Collection key={item.id} />}
+                    renderItem={({ item }) => <TrendingCollect key={item.id} />}
                     style={{
                         marginTop: 40,
                     }}
